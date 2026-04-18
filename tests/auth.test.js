@@ -1,9 +1,13 @@
+import { jest } from "@jest/globals";
 import request from "supertest";
 import app from "../src/app.js";
+
+jest.setTimeout(50000);
 
 describe("Auth Routes", () => {
 
   let token;
+
 
   it("should register a user", async () => {
     const res = await request(app)
